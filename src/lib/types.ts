@@ -1,3 +1,5 @@
+import type { Component } from "svelte";
+
 export interface ProfileInfo {
   fullName: string;
   email: string;
@@ -43,4 +45,12 @@ export interface MasterProfile {
   educations: Education[];
   projects: Project[];
   skills: Skill[];
+}
+
+export interface CvTemplate {
+  id: string;
+  name: string;
+
+  component: Component<{ profileData: MasterProfile }>;
+  thumbnail: string; // URL to a thumbnail image
 }

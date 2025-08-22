@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{fullName}} | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div class="hero-initials">{{initials}}</div>
+        <h1 class="hero-title">{{fullName}}</h1>
+        <h2 class="hero-subtitle">{{jobTitle}}</h2>
+        <p class="hero-summary">{{summary}}</p>
+        <div class="hero-links">
+          <a href="mailto:{{email}}" class="btn">Contact Me</a>
+          <a
+            href="{{website}}"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Website</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <section id="experience" class="fade-in">
+          <h2>Work Experience</h2>
+          <div class="card-grid">{{workExperiences}}</div>
+        </section>
+
+        <section id="education" class="fade-in">
+          <h2>Education</h2>
+          <div class="card-grid">{{educations}}</div>
+        </section>
+      </main>
+
+      <footer class="fade-in">
+        <p>&copy; 2024 {{fullName}}. Built with passion.</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

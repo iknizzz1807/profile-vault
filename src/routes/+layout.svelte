@@ -6,56 +6,59 @@
 </script>
 
 <svelte:head>
-  <title>Profile Vault AI - Trình tạo CV thông minh</title>
+  <title>Profile Vault AI - Trình tạo CV và Portfolio thông minh</title>
   <meta
     name="description"
-    content="Tạo CV chuyên nghiệp nhanh chóng với sự trợ giúp của AI. Tải lên, chỉnh sửa và tải xuống CV của bạn."
+    content="Tạo CV và website portfolio chuyên nghiệp nhanh chóng với sự trợ giúp của AI."
   />
   <link rel="icon" href={favicon} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
 
-<div class="min-h-screen bg-slate-50 text-slate-900 font-body flex flex-col">
+<div class="flex min-h-screen flex-col bg-slate-50 text-slate-900">
   <header
-    class="sticky top-0 z-10 bg-white/80 backdrop-blur-md shadow-sm"
+    class="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-md"
     data-no-print
   >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
-        <div class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-3">
           <img src={favicon} alt="Profile Vault AI Logo" class="h-8 w-8" />
-          <a href="/" class="text-xl font-bold text-primary-600"
-            >Profile Vault AI</a
+          <span class="text-xl font-bold tracking-tight text-primary-600"
+            >Profile Vault AI</span
           >
-        </div>
-        <p class="hidden md:block text-sm text-slate-500">
-          Trình tạo CV thông minh thế hệ mới
+        </a>
+        <p class="hidden text-sm text-slate-500 md:block">
+          Trình tạo hồ sơ thông minh thế hệ mới
         </p>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow py-8 sm:py-12">
-    {@render children?.()}
+  <main class="w-full flex-grow">
+    {@render children()}
   </main>
 
   <footer
-    class="text-center py-6 text-slate-500 text-sm border-t bg-white mt-12"
+    class="border-t bg-white py-6 text-center text-sm text-slate-500"
     data-no-print
   >
-    <p>
-      &copy; {new Date().getFullYear()} Profile Vault AI. All rights reserved.
-    </p>
-    <p class="mt-1">
-      Made with ❤️ using <a
-        href="https://kit.svelte.dev"
-        class="text-primary-600 hover:underline">SvelteKit</a
-      >
-    </p>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p>
+        &copy; {new Date().getFullYear()} Profile Vault AI. All rights reserved.
+      </p>
+      <p class="mt-1">
+        Made with ❤️ using
+        <a
+          href="https://kit.svelte.dev"
+          class="text-primary-600 hover:underline">SvelteKit</a
+        >
+      </p>
+    </div>
   </footer>
 </div>

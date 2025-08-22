@@ -27,6 +27,13 @@ export async function extractTextFromFiles(files: File[]): Promise<string> {
         const arrayBuffer = await file.arrayBuffer();
         const result = await mammoth.extractRawText({ arrayBuffer });
         text = result.value;
+      } else if (file.type === "text/csv") {
+        const rawText = await file.text();
+        text = rawText
+          .split("\n")
+          .filter((row) => row.trim() !== "")
+          .map((row, index) => `Dòng ${index + 1}: ${row.trim()}`)
+          .join("\n");
       } else if (file.type.startsWith("text/")) {
         text = await file.text();
       } else {
